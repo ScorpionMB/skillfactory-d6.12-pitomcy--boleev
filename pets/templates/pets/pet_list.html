@@ -1,0 +1,12 @@
+{% extends "layout/basic.html" %}
+
+    {% block content %}
+
+        {% for pet in object_list %}
+            <a class="pet" href="{{pet.pk}}">
+                <img class="foto" src="{{ pet.foto.url }}" alt="">
+                <p class="name">{{ pet.name }}</p>
+            </a>
+        {% endfor %}
+
+    {% endblock %}

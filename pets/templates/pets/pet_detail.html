@@ -1,0 +1,17 @@
+{% extends "layout/basic.html" %}
+
+    
+{% block content %}
+
+<div class="pet">
+    <img class="foto" src="{{ pet.foto.url }}" alt="">
+    <p class="name">Кличка: "{{ pet.name }}"</p>
+    <p class="name">Порода: {{ pet.breed }}</p>
+    <p class="name">Возраст: {{ pet.age }}</p>
+    <p class="name">Окрас: {{ pet.color }}</p>
+</div>
+    <p>{{ pet.description }}</p>
+
+
+        
+{% endblock %}

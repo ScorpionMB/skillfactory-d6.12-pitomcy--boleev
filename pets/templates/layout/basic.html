@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <title>Питомцы</title>
+</head>
+<section class="wrapper">
+    <header>
+        <div class="btn_left">
+            <a class="header_link" href="{% url 'index' %}">О нас</a>
+            <a class="header_link" href="{% url 'pets' %}">Питомцы</a>
+            <div class="btn-group">
+                <button type="button" class="btn btn-warning">Вид Питомца</button>
+                <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="?all=all">Все</a>
+                  <a class="dropdown-item" href="?filter=Собака">Собака</a>
+                  <a class="dropdown-item" href="?filter=Кот">Кот</a>
+                  <a class="dropdown-item" href="?filter=Попугай">Попугай</a>
+                </div>
+            </div>
+            <a class="header_link" href="{% url 'contacts' %}">Контакты</a>               
+        </div>
+        <div class="btn_right">
+            <form class="search" action="">
+                <input type="search" name="q" placeholder=" Имя питомца">
+                <button class="search_btn">Поиск</button>
+            </form>
+        </div>
+        
+    </header>
+    <body>
+        <div class="pet_show">
+        {% block content %}
+        {% endblock %}
+        </div>
+    </body>
+    <footer class="footer">
+        <p>© Copyright@Skillfatory 2021, All rights reserved.</p>
+        <div class="footer_icons">
+            <a href=""><img src="{% static 'images/1468368398_Twitter_Rounded_Solid 2.svg' %}" alt="twitter"></a>
+            <a href=""><img src="{% static 'images/1468368407_LinkedIn_Rounded_Solid.svg' %}" alt="LinkedIn"></a>
+            <a href=""><img src="{% static 'images/1468368412_Google_Rounded_Solid 2.svg' %}" alt="google"></a>
+            <a href=""><img src="{% static 'images/1468368389_Facebook_Rounded_Solid.svg' %}" alt="facebook"></a>
+        </div>
+    </footer>
+</section>
+</html>
